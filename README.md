@@ -16,7 +16,7 @@ $ curl http://127.0.0.1:9000/acfun/0/10/20
 
 
 增加分数
-/increment/:channelId/:id/:score/:timeout
+`/increment/:channelId/:id/:score/:timeout`
 
 - channelId: 频道ID
 - id: 一般为av号
@@ -25,7 +25,7 @@ $ curl http://127.0.0.1:9000/acfun/0/10/20
 
 
 获取结果
-/:channelId/:timeout/:start/:count
+`/:channelId/:timeout/:start/:count`
 
 - channelId: 频道ID
 - start: 第几名
