@@ -31,14 +31,14 @@ index.get("/decrement/:channelId/:id/:score", function*(){
 });
 
 
-index.get("/:channelId/:start/:end", function*(){
+index.get("/:channelId/:start/:end/:timeout", function*(){
 
 
 	var p = this.params, type = p.type;
 
 
 
-	this.body = yield redis.cozrevrange(p.channelId, p.start, p.end);
+	this.body = yield redis.cozrevrange(p.channelId + p.timeout, p.start, p.end);
 });
 
 
