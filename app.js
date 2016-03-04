@@ -18,4 +18,4 @@ var index  = require("./routes"),
 app.use(mount("/", index.middleware()));
 
 
-app.listen(9000);
+app.listen(config.port);

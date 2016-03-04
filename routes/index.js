@@ -10,8 +10,7 @@ var index  = new Router();
 index.get("/increment/:channelId/:id/:score/:timeout", function*(){
 
 
-	var p = this.params, type = p.type;
-
+	var p = this.params;
 	
 	redis.increment(p.channelId, p.id, p.score, p.timeout);
 
@@ -22,8 +21,7 @@ index.get("/increment/:channelId/:id/:score/:timeout", function*(){
 index.get("/decrement/:channelId/:id/:score", function*(){
 
 
-	var p = this.params, type = p.type;
-
+	var p = this.params;
 	
 	redis.decrement(p.channelId, p.id, p.score);
 
@@ -34,9 +32,7 @@ index.get("/decrement/:channelId/:id/:score", function*(){
 index.get("/:channelId/:start/:end/:timeout", function*(){
 
 
-	var p = this.params, type = p.type;
-
-
+	var p = this.params;
 
 	this.body = yield redis.cozrevrange(p.channelId + p.timeout, p.start, p.end);
 });
